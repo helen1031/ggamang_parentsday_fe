@@ -3,26 +3,26 @@ name: Deploy
 on:
   push:
     branches:
-      - master  # Trigger on pushes to the master branch.
+      - master # Trigger on pushes to the master branch.
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2  # Checkout the code
+      - uses: actions/checkout@v2 # Checkout the code
 
-    # Log in to Docker Hub
-    - name: Log in to Docker Hub
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      # Log in to Docker Hub
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-    # Build and push Docker image
-    - name: Build and push Docker image
-      run: |
-        docker build -t "${{ secrets.DOCKER_USERNAME }}/ggamanggarden-parentsday-react:latest" .
-        docker push "${{ secrets.DOCKER_USERNAME }}/ggamanggarden-parentsday-react:latest"
+      # Build and push Docker image
+      - name: Build and push Docker image
+        run: |
+          docker build -t "${{ secrets.DOCKER_USERNAME }}/ggamanggarden-parentsday-react:latest" .
+          docker push "${{ secrets.DOCKER_USERNAME }}/ggamanggarden-parentsday-react:latest"
 
   run-docker-image-on-ec2:
-    needs: build-and-push  # Ensure this job runs after the build-and-push job
+    needs: build-and-push # Ensure this job runs after the build-and-push job
     runs-on: ubuntu-latest
     steps:
       - name: Executing remote SSH commands to deploy Docker container
@@ -35,7 +35,7 @@ jobs:
             # Stop and remove any running container
             sudo docker stop $(sudo docker ps -q) || true
             sudo docker rm $(sudo docker ps -a -q) || true
-            
+
             # Pull the latest image and run it
             sudo docker pull "${{ secrets.DOCKER_USERNAME }}/ggamanggarden-parentsday-react:latest"
-            sudo docker run --name ggamanggarden-parentsday-react -d -p 3000:3000 "${{ secrets.DOCKER_USERNAME }}/ggamanggarden-parentsday-react:latest"
+            sudo docker run --name ggamanggarden-parentsday-react -d -p 3000:80 "${{ secrets.DOCKER_USERNAME }}/ggamanggarden-parentsday-react:latest"
