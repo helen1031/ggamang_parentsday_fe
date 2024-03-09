@@ -63,26 +63,49 @@ const OrderBody = ({
         />
       </div>
       <div className="base-container product-list-container block-container">
-        {products.map((product) => (
-          <React.Fragment key={product.pid}>
-            {product.colorOption ? (
-              ["Red", "Peach"].map((color) => (
-                <div key={`${product.name}-${color}`}>
+        {Array.isArray(products) &&
+          products.map((product) => (
+            <React.Fragment key={product.pid}>
+              {product.colorOption ? (
+                ["Red", "Peach"].map((color) => (
+                  <div key={`${product.name}-${color}`}>
+                    <label>{`${
+                      product.name
+                    } - ${color} (${product.price.toLocaleString()}원) - 주문 가능 수량 : ${
+                      product.stock
+                    }`}</label>
+                    <input
+                      type="number"
+                      value={
+                        selectedProducts[`${product.name}-${color}`]
+                          ?.quantity || 0
+                      }
+                      onChange={(e) =>
+                        handleQuantityChange(
+                          product.name,
+                          color,
+                          parseInt(e.target.value)
+                        )
+                      }
+                      min="0"
+                      max={product.stock}
+                    />
+                  </div>
+                ))
+              ) : (
+                <div key={product.name}>
                   <label>{`${
                     product.name
-                  } - ${color} (${product.price.toLocaleString()}원) - 주문 가능 수량 : ${
+                  } (${product.price.toLocaleString()}원) - 주문 가능 수량 : ${
                     product.stock
                   }`}</label>
                   <input
                     type="number"
-                    value={
-                      selectedProducts[`${product.name}-${color}`]?.quantity ||
-                      0
-                    }
+                    value={selectedProducts[product.name]?.quantity || 0}
                     onChange={(e) =>
                       handleQuantityChange(
                         product.name,
-                        color,
+                        null,
                         parseInt(e.target.value)
                       )
                     }
@@ -90,31 +113,9 @@ const OrderBody = ({
                     max={product.stock}
                   />
                 </div>
-              ))
-            ) : (
-              <div key={product.name}>
-                <label>{`${
-                  product.name
-                } (${product.price.toLocaleString()}원) - 주문 가능 수량 : ${
-                  product.stock
-                }`}</label>
-                <input
-                  type="number"
-                  value={selectedProducts[product.name]?.quantity || 0}
-                  onChange={(e) =>
-                    handleQuantityChange(
-                      product.name,
-                      null,
-                      parseInt(e.target.value)
-                    )
-                  }
-                  min="0"
-                  max={product.stock}
-                />
-              </div>
-            )}
-          </React.Fragment>
-        ))}
+              )}
+            </React.Fragment>
+          ))}
         <div className="TotalAmountContainer">
           <label htmlFor="totalPrice">총 주문금액: {totalPrice}원</label>
         </div>

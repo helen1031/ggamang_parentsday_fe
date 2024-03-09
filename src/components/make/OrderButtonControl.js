@@ -3,6 +3,7 @@ import OrderBody from "./OrderBody";
 import OrderButton from "./OrderButton";
 import OrderAgree from "./OrderAgree";
 import { fetchProducts } from "../../service/ProductService";
+import { orderSave } from "../../service/OrderService";
 
 const OrderButtonControl = () => {
   // State to store customer name, phone number, and selected products
@@ -38,6 +39,37 @@ const OrderButtonControl = () => {
     }
   };
 
+  const sendOrderToServer = () => {
+    let items = [];
+
+    Object.keys(selectedProducts).forEach((key) => {
+      const item = selectedProducts[key];
+      const product = products.find((p) => p.name === item.productName);
+
+      if (product && item.quantity > 0) {
+        items.push({
+          pid: product.pid,
+          quantity: item.quantity,
+          color: item.color || "None",
+        });
+      }
+    });
+
+    const orderData = {
+      cname: customerName,
+      phone: phoneNumber,
+      pickUp: false,
+      wantDate,
+      items,
+    };
+
+    orderSave(orderData).then(() => {
+      // After the order is successfully saved, refresh the page
+      alert("주문이 완료되었습니다.");
+      window.location.reload();
+    });
+  };
+
   // Function to handle form submission
   const handleSubmit = () => {
     const message = `주문자 정보가 정확한지 확인 부탁드립니다.\n\n고객명: ${customerName}\n전화번호: ${phoneNumber}`;
@@ -46,7 +78,8 @@ const OrderButtonControl = () => {
     // Check the user's response
     if (isConfirmed) {
       // Proceed with the order creation if the user confirms
-      alert("주문이 완료되었습니다."); // Placeholder for your actual order submission logic
+      sendOrderToServer();
+      //alert("주문이 완료되었습니다."); // Placeholder for your actual order submission logic
       // Here you would typically call a function to send the order data to your server
     } else {
       // Abort the order creation if the user cancels
