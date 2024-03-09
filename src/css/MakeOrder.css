@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=IBM+Plex+Sans+KR&display=swap");
+
+body {
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+.base-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhancements for containers to stack input fields vertically */
+.customer-info-container,
+.product-list-container,
+.order-info-container,
+.agreement-container {
+  margin-top: 15px;
+}
+
+/* Label styling */
+.base-container label {
+  display: block; /* Makes label take the full width */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Makes text bold */
+}
+
+/* Input and checkbox styling */
+.base-container input[type="text"],
+.base-container input[type="tel"],
+.base-container input[type="number"],
+.base-container select {
+  width: 95%; /* Full width but leaves room for margins */
+  padding: 8px; /* Adequate padding for touch targets */
+  margin-bottom: 15px; /* Space after each input */
+  border: 1px solid #ccc; /* Subtle border style */
+  border-radius: 4px; /* Matching the button border radius */
+  box-sizing: border-box; /* Includes padding and border in the width */
+}
+
+.TotalAmountContainer {
+  text-align: right; /* Aligns the total amount to the right */
+  padding: 20px;
+  font-weight: bold; /* Optional: Makes the total amount text bold */
+}
+
+/* Including if you have specific styling for total amount text */
+.TotalAmount {
+  display: inline-block; /* Ensures the text aligns to the right within its container */
+  margin-right: 20px; /* Adds some space to the right */
+}
+
+.agreement-container div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Adds space between agreement items */
+}
+
+.agreement-container input[type="checkbox"] {
+  margin-right: 10px; /* Adds space between checkbox and text */
+}
+
+.agreement-container label {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 5px; /* Adds space after the checkbox */
+}
+
+/* General Button Styling */
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.OrderButtonContainer {
+  text-align: center; /* Centers the button within its container */
+  width: 100%;
+}
+
+/* 주문하기 Button Styling */
+.OrderButton {
+  display: inline-block; /* Allows the button to center align */
+  background-color: #e5f5cb; /* Green shade */
+  color: black;
+  font-size: 18px;
+  padding: 15px 32px;
+  border: none;
+  margin-top: 20px; /* Adds space above the button */
+}
+
+.OrderButton:disabled {
+  background-color: grey;
+}
+
+.OrderButton:hover {
+  background-color: #aabd87; /* Slightly darker green on hover */
+}
+
+/* 전체동의 Button Styling - smaller than 주문하기 button */
+.OrderInfo button {
+  background-color: #e5f5cb; /* Softer green shade */
+  color: black;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+}
+
+.OrderInfo button:hover {
+  background-color: #aabd87; /* Slightly darker shade on hover */
+}

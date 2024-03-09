@@ -1,0 +1,52 @@
+/* General alignment and styling for the header section */
+.OrderHeader {
+  text-align: center;
+  padding: 20px;
+}
+
+.OrderHeader img {
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+.OrderHeader p {
+  font-size: 2rem; /* Larger font size for prominence */
+  color: #333;
+  margin: 0;
+}
+
+.OrderFind input,
+.OrderFind select {
+  width: 100%; /* Making input boxes wider */
+  padding: 10px; /* More padding for larger click area */
+  margin: 10px 0; /* Spacing out elements */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Matching rounded corners */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+/* Adjusting label styles for consistency and clarity */
+.OrderFind label {
+  display: block;
+  margin: 15px auto 5px; /* Increased space above labels */
+  font-weight: bold; /* Making text bold for emphasis */
+}
+
+.FindButtonContainer {
+  text-align: center; /* Centers the button within its container */
+  width: 100%;
+}
+
+.FindButton {
+  display: inline-block; /* Allows the button to center align */
+  background-color: #e5f5cb; /* Green shade */
+  color: black;
+  font-size: 18px;
+  padding: 15px 32px;
+  border: none;
+  margin-top: 20px;
+}
+
+.FindButton:hover {
+  background-color: #aabd87;
+}

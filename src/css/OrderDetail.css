@@ -1,0 +1,51 @@
+.OrderDetail {
+  width: 100%;
+  max-width: 600px; /* Adjust based on your preference */
+  margin: 0 auto; /* Center the order details */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.order-item {
+  border: 1px solid #ddd; /* Light grey border for each item */
+  border-radius: 4px; /* Rounded corners */
+  margin-bottom: 15px; /* Space between items */
+  padding: 10px; /* Padding inside each item */
+  background-color: #f9f9f9; /* Light background for the item */
+  position: relative; /* Needed to position the button absolutely */
+}
+
+.order-item p {
+  margin: 5px 0; /* Add some space around each paragraph */
+  font-size: 14px; /* Font size for the content */
+}
+
+.order-item button {
+  position: absolute; /* Position the button relative to its order item */
+  right: 10px; /* 10px from the right edge */
+  top: 10px; /* 10px from the top edge */
+  padding: 10px 15px; /* Padding inside the button */
+  background-color: #e5f5cb; /* A nice blue */
+  color: black; /* White text color */
+  border: none; /* No border */
+  border-radius: 2px; /* Slightly rounded corners for the button */
+  cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+}
+
+.order-item button:hover {
+  background-color: #2980b9; /* Darken the button on hover */
+}
+
+.order-item.picked-up {
+  background-color: #6c6f66; /* Deep grey background */
+}
+
+.order-item.picked-up button {
+  background-color: #555; /* Darker button to indicate it is disabled */
+  cursor: not-allowed; /* Change cursor to indicate the button is disabled */
+}
+
+.order-item button:disabled {
+  background-color: #555; /* Darker button to indicate it is disabled */
+  color: #ccc; /* Lighter text to indicate the button is disabled */
+}
