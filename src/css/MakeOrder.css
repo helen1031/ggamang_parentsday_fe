@@ -60,24 +60,32 @@ body {
   margin-bottom: 10px; /* Adds space between agreement items */
 }
 
+.checkbox-container {
+  display: flex;
+  align-items: center; /* This will vertically center align the checkbox and label */
+  margin-bottom: 10px; /* Space between agreement lines */
+}
+
 .agreement-container input[type="checkbox"] {
   margin-right: 10px; /* Adds space between checkbox and text */
 }
 
-.base-container input[type="checkbox"] {
-  width: 20px; /* Width of the checkbox */
-  height: 20px; /* Height of the checkbox */
-  -webkit-appearance: none; /* Removes default styling on iOS */
-  -moz-appearance: none; /* Removes default styling on Firefox */
-  appearance: none; /* Removes default browser styling */
-  border: 1px solid #ccc; /* Custom border for the checkbox */
-  background-color: #fff; /* Custom background color */
-  cursor: pointer; /* Changes cursor to pointer to indicate it's clickable */
+.checkbox-container input[type="checkbox"] {
+  flex-shrink: 0; /* Prevent the checkbox from shrinking */
+  width: 20px; /* Strict width */
+  height: 20px; /* Strict height */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #ccc; /* Defined border */
+  background-color: #fff; /* Background color */
+  cursor: pointer; /* Cursor when hovered */
+  display: inline-block; /* Inline display with block characteristics */
+  vertical-align: middle; /* Vertical alignment for inline elements */
 }
 
 /* Style for when the checkbox is checked */
 .base-container input[type="checkbox"]:checked {
-  background-color: #4caf50; /* Background color when checked */
   border: 1px solid #4caf50; /* Border color to match the background */
 }
 
@@ -86,9 +94,9 @@ body {
   content: "✔"; /* Unicode checkmark symbol */
   display: block;
   text-align: center;
-  color: #fff;
+  color: black;
   position: relative;
-  top: -16px; /* Adjusts the position of the checkmark */
+  top: 1px; /* Centering the checkmark */
   font-size: 18px; /* Size of the checkmark */
 }
 

@@ -38,7 +38,7 @@ const OrderInfo = ({ updateAllAgreementsChecked }) => {
         <div>
           <button onClick={handleAgreeAll}>전체동의</button>
         </div>
-        <div>
+        <div className="checkbox-container">
           <input
             type="checkbox"
             id="personalInfoAgreement"
@@ -49,7 +49,7 @@ const OrderInfo = ({ updateAllAgreementsChecked }) => {
           위해서만 사용되며, 개인정보는 암호화되어 보관된 후, 24년 5월 13일 이후
           완전 파기됩니다.
         </div>
-        <div>
+        <div className="checkbox-container">
           <input
             type="checkbox"
             id="paymentAgreement"
@@ -58,7 +58,7 @@ const OrderInfo = ({ updateAllAgreementsChecked }) => {
           />
           주문 상품에 대한 결제는 사전에 부탁드리겠습니다.
         </div>
-        <div>
+        <div className="checkbox-container">
           <input
             type="checkbox"
             id="refundAgreement"
@@ -69,7 +69,7 @@ const OrderInfo = ({ updateAllAgreementsChecked }) => {
           가능합니다. 환불 시, 결제하신 금액 중 예약 이벤트로 제공된 선물 가격
           5,000원을 제외한 금액이 환불됨을 양지 부탁드립니다.
         </div>
-        <div>
+        <div className="checkbox-container">
           <input
             type="checkbox"
             id="locationAgreement"
