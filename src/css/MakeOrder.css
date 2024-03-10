@@ -96,7 +96,7 @@ body {
   text-align: center;
   color: black;
   position: relative;
-  top: 1px; /* Centering the checkmark */
+  top: 0; /* Centering the checkmark */
   font-size: 18px; /* Size of the checkmark */
 }
 
