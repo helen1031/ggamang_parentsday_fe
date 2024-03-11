@@ -6,7 +6,7 @@ import MakeOrder from "./pages/MakeOrder";
 import ReceiveOrder from "./pages/ReceiveOrder";
 import OrderDetailCheck from "./components/receive/OrderDetail";
 import EditOrder from "./pages/EditOrder";
-import OrderDetailEdit from "./components/edit/OrderDetail";
+import EditOrderDetail from "./pages/EditOrderDetail";
 
 function AppRouter() {
   return (
@@ -17,7 +17,7 @@ function AppRouter() {
         <Route path="/receive-order" element={<ReceiveOrder />}></Route>
         <Route path="/order-details-check" element={<OrderDetailCheck />} />
         <Route path="/edit-order" element={<EditOrder />}></Route>
-        <Route path="/order-details-edit" element={<OrderDetailEdit />} />
+        <Route path="/edit-order-detail" element={<EditOrderDetail />} />
       </Routes>
     </BrowserRouter>
   );

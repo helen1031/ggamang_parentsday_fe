@@ -22,7 +22,8 @@ const OrderBody = ({
     const quantity = Math.min(maxQuantity, inputQuantity);
 
     // Update the product quantity ensuring it's within the available stock.
-    const key = color ? `${productName}-${color}` : productName;
+    const key =
+      color && product.colorOption ? `${productName}-${color}` : productName;
     setSelectedProducts((prevState) => ({
       ...prevState,
       [key]: {

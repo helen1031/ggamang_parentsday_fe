@@ -21,7 +21,7 @@ const Home = () => {
     <div>
       <button onClick={handleMakeOrderClick}>예약주문</button>
       <button onClick={handleReceiveOrderclick}>주문수령</button>
-      {/* <button onClick={handleEditOrderclick}>주문변경</button> */}
+      <button onClick={handleEditOrderclick}>주문취소</button>
     </div>
   );
 };

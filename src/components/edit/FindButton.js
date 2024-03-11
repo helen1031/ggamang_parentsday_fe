@@ -1,28 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { orderSearch } from "../../service/OrderService";
 
-const FindButton = ({ customerName, phoneNumber }) => {
-  const navigate = useNavigate();
-
-  const sendPersonInfoToServer = () => {
-    const customerDTO = {
-      cname: customerName,
-      phone: phoneNumber,
-    };
-
-    orderSearch(customerDTO)
-      .then((response) => {
-        // Navigate to the OrderDetailsPage and pass the response data
-        navigate("/order-details-edit", { state: { orderDetails: response } });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
+const FindButton = ({ onClick }) => {
   return (
-    <button className="FindButton" onClick={sendPersonInfoToServer}>
+    <button className="FindButton" onClick={onClick}>
       조회하기
     </button>
   );

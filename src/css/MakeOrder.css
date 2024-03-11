@@ -141,7 +141,7 @@ button {
 }
 
 /* 전체동의 Button Styling - smaller than 주문하기 button */
-.OrderInfo button {
+.OrderAgree button {
   background-color: #e5f5cb; /* Softer green shade */
   color: black;
   font-size: 16px;
@@ -149,6 +149,6 @@ button {
   border: none;
 }
 
-.OrderInfo button:hover {
+.OrderAgree button:hover {
   background-color: #aabd87; /* Slightly darker shade on hover */
 }

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const OrderInfo = ({ updateAllAgreementsChecked }) => {
+const OrderAgree = ({ updateAllAgreementsChecked, isEditing }) => {
   // Create state variables to track the agreement status for each category
-  const [personalInfoAgreed, setPersonalInfoAgreed] = useState(false);
-  const [paymentAgreed, setPaymentAgreed] = useState(false);
-  const [refundAgreed, setRefundAgreed] = useState(false);
-  const [locationAgreed, setLocationAgreed] = useState(false);
+  const [personalInfoAgreed, setPersonalInfoAgreed] = useState(isEditing);
+  const [paymentAgreed, setPaymentAgreed] = useState(isEditing);
+  const [refundAgreed, setRefundAgreed] = useState(isEditing);
+  const [locationAgreed, setLocationAgreed] = useState(isEditing);
 
   // Function to handle the "전체동의" (Agree All) button click
   const handleAgreeAll = () => {
@@ -33,7 +33,7 @@ const OrderInfo = ({ updateAllAgreementsChecked }) => {
   ]);
 
   return (
-    <div className="OrderInfo">
+    <div className="OrderAgree">
       <div className="base-container agreement-container block-container">
         <div>
           <button onClick={handleAgreeAll}>전체동의</button>
@@ -84,4 +84,4 @@ const OrderInfo = ({ updateAllAgreementsChecked }) => {
   );
 };
 
-export default OrderInfo;
+export default OrderAgree;
