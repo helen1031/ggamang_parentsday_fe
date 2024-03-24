@@ -4,6 +4,7 @@ const OrderAgree = ({ updateAllAgreementsChecked, isEditing }) => {
   // Create state variables to track the agreement status for each category
   const [personalInfoAgreed, setPersonalInfoAgreed] = useState(isEditing);
   const [paymentAgreed, setPaymentAgreed] = useState(isEditing);
+  const [typeAgreed, setTypeAgreed] = useState(isEditing);
   const [refundAgreed, setRefundAgreed] = useState(isEditing);
   const [locationAgreed, setLocationAgreed] = useState(isEditing);
 
@@ -11,13 +12,18 @@ const OrderAgree = ({ updateAllAgreementsChecked, isEditing }) => {
   const handleAgreeAll = () => {
     setPersonalInfoAgreed(true);
     setPaymentAgreed(true);
+    setTypeAgreed(true);
     setRefundAgreed(true);
     setLocationAgreed(true);
   };
 
   const allAgreementsChecked = () => {
     return (
-      personalInfoAgreed && paymentAgreed && refundAgreed && locationAgreed
+      personalInfoAgreed &&
+      paymentAgreed &&
+      typeAgreed &&
+      refundAgreed &&
+      locationAgreed
     );
   };
 
@@ -28,6 +34,7 @@ const OrderAgree = ({ updateAllAgreementsChecked, isEditing }) => {
     personalInfoAgreed,
     paymentAgreed,
     refundAgreed,
+    typeAgreed,
     locationAgreed,
     updateAllAgreementsChecked,
   ]);
@@ -57,6 +64,15 @@ const OrderAgree = ({ updateAllAgreementsChecked, isEditing }) => {
             onChange={() => setPaymentAgreed(!paymentAgreed)}
           />
           주문 상품에 대한 결제는 사전에 부탁드리겠습니다.
+        </div>
+        <div className="checkbox-container">
+          <input
+            type="checkbox"
+            id="typeAgreement"
+            checked={typeAgreed}
+            onChange={() => setTypeAgreed(!typeAgreed)}
+          />
+          꽃시장 수급현황에 따라 꽃 종류가 변경될 수 있습니다.
         </div>
         <div className="checkbox-container">
           <input
