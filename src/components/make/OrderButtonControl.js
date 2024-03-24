@@ -150,7 +150,6 @@ const OrderButtonControl = ({ preFilledData, isEditing }) => {
     if (isConfirmed) {
       // Proceed with the order creation if the user confirms
       sendOrderToServer();
-      alert("주문이 완료되었습니다.");
     } else {
       // Abort the order creation if the user cancels
       console.log("Order creation canceled.");
