@@ -138,6 +138,9 @@ const OrderBody = ({
           <option value="10">10일(금)</option>
           <option value="11">11일(토)</option>
           <option value="12">12일(일)</option>
+          <option value="13">13일(월)</option>
+          <option value="14">14일(화)</option>
+          <option value="15">15일(수)</option>
         </select>
       </div>
     </div>

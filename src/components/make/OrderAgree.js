@@ -52,8 +52,8 @@ const OrderAgree = ({ updateAllAgreementsChecked, isEditing }) => {
             checked={personalInfoAgreed}
             onChange={() => setPersonalInfoAgreed(!personalInfoAgreed)}
           />
-          수집된 개인정보(이름, 전화번호)는 까망네정원 상품 주문 및 수령을
-          위해서만 사용되며, 개인정보는 암호화되어 보관된 후, 24년 5월 13일 이후
+          수집된 개인정보(이름, 전화번호)는 까망네꽃집 상품 주문 및 수령을
+          위해서만 사용되며, 개인정보는 암호화되어 보관된 후, 24년 5월 16일 이후
           완전 파기됩니다.
         </div>
         <div className="checkbox-container">
@@ -82,8 +82,7 @@ const OrderAgree = ({ updateAllAgreementsChecked, isEditing }) => {
             onChange={() => setRefundAgreed(!refundAgreed)}
           />
           생화 특성 상 주문 취소 및 환불 요청은 수령일로부터 7일 이전까지
-          가능합니다. 환불 시, 결제하신 금액 중 예약 이벤트로 제공된 선물 가격
-          5,000원을 제외한 금액이 환불됨을 양지 부탁드립니다.
+          가능합니다.
         </div>
         <div className="checkbox-container">
           <input
@@ -92,8 +91,7 @@ const OrderAgree = ({ updateAllAgreementsChecked, isEditing }) => {
             checked={locationAgreed}
             onChange={() => setLocationAgreed(!locationAgreed)}
           />
-          수령 장소는 까망네정원(경상북도 김천시 대항면 대성향천길 1569-28)로
-          수령일에 와주셔야 합니다.
+          수령 장소는 까망네꽃집(대치동 911-13)으로 수령일에 와주셔야 합니다.
         </div>
       </div>
     </div>
