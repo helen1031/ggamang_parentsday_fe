@@ -129,6 +129,9 @@ const OrderBody = ({
           value={wantDate}
           onChange={(e) => setWantDate(e.target.value)}
         >
+          <option value="1">1일(수)</option>
+          <option value="2">2일(목)</option>
+          <option value="3">3일(금)</option>
           <option value="4">4일(토)</option>
           <option value="5">5일(일)</option>
           <option value="6">6일(월)</option>
